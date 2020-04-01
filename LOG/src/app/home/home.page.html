@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="title">
+      INICIO DE SESIÓN
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-img src="assets/img/user.png" class="image"></ion-img>
+  <form [formGroup]="myForm" (ngSubmit)="signIn()" class="form">
+    <ion-list>
+      <ion-item>
+        <ion-icon slot="start" name="mail-outline"></ion-icon>
+        <ion-label position="floating">CORREO <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input type="text" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="lock-open-outline"></ion-icon>
+        <ion-label position="floating">CONTRASEÑA<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="block" shape="round" type="submit">
+      INGRESAR
+    </ion-button>
+    <ion-button expand="block" fill="clear" shape="round" (click)="signUp()">
+      REGISTRARSE
+    </ion-button>
+  </form>
+</ion-content>
